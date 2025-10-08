@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Jason Madi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@15.0.0"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">JM</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Retour à l'accueil</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Login Section -->
+    <section class="hero" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div class="container">
+            <div class="admin-login-container" style="max-width: 500px; margin: 0 auto; text-align: center;">
+                <!-- Login Form -->
+                <div id="loginForm" class="admin-form">
+                    <div class="section-header" style="margin-bottom: 2rem;">
+                        <h2 class="section-title">Administration</h2>
+                        <div class="section-line"></div>
+                        <p style="margin-top: 1rem; color: var(--text-light); font-size: 1.1rem;">Connectez-vous pour accéder au panneau d'administration</p>
+                    </div>
+
+                    <div class="code-block" style="margin-bottom: 2rem; text-align: left;">
+                        <div class="code-header">
+                            <div class="dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="code-title">admin.login()</span>
+                        </div>
+                        <div class="code-content" style="padding: 2rem;">
+                            <form id="adminLoginForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div class="form-group">
+                                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--accent); font-weight: 500;">Email :</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        required 
+                                        style="width: 100%; padding: 0.8rem 1rem; border: 2px solid var(--card-border); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; transition: border-color 0.3s ease;"
+                                        placeholder="admin@example.com"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" style="display: block; margin-bottom: 0.5rem; color: var(--accent); font-weight: 500;">Mot de passe :</label>
+                                    <input 
+                                        type="password" 
+                                        id="password" 
+                                        name="password" 
+                                        required 
+                                        style="width: 100%; padding: 0.8rem 1rem; border: 2px solid var(--card-border); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; transition: border-color 0.3s ease;"
+                                        placeholder="••••••••"
+                                    >
+                                </div>
+                                <button 
+                                    type="submit" 
+                                    class="btn btn-primary" 
+                                    style="width: 100%; margin-top: 1rem; padding: 1rem;"
+                                    id="loginBtn"
+                                >
+                                    <span id="loginBtnText">Se connecter</span>
+                                    <div id="loginSpinner" style="display: none; width: 20px; height: 20px; border: 2px solid transparent; border-top: 2px solid white; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="errorMessage" class="error-message" style="display: none; padding: 1rem; background: rgba(255, 107, 107, 0.1); border: 1px solid rgba(255, 107, 107, 0.3); border-radius: 8px; color: #ff6b6b; margin-top: 1rem;"></div>
+                </div>
+
+                <!-- Dashboard (Hidden initially) -->
+                <div id="dashboard" class="admin-dashboard" style="display: none;">
+                    <div class="section-header" style="margin-bottom: 2rem;">
+                        <h2 class="section-title">Tableau de bord</h2>
+                        <div class="section-line"></div>
+                        <p style="margin-top: 1rem; color: var(--text-light); font-size: 1.1rem;">Bienvenue dans votre espace d'administration</p>
+                    </div>
+
+                    <div class="admin-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="admin-card" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span>📊</span> Statistiques
+                            </h3>
+                            <div class="stat-grid" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Visiteurs aujourd'hui :</span>
+                                    <strong>42</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Visiteurs total :</span>
+                                    <strong>1,337</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-card" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span>⚙️</span> Actions rapides
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Éditer le profil</button>
+                                <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Gérer les projets</button>
+                            </div>
+                        </div>
+
+                        <div class="admin-card" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span>👤</span> Utilisateur connecté
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Email :</span>
+                                    <strong id="userEmail">-</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Rôle :</span>
+                                    <strong>Administrateur</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-actions" style="text-align: center;">
+                        <button 
+                            id="logoutBtn" 
+                            class="btn btn-outline" 
+                            style="padding: 0.8rem 2rem; border-color: #ff6b6b; color: #ff6b6b;"
+                        >
+                            Se déconnecter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AppWrite Configuration and Scripts -->
+    <script>
+        // Configuration AppWrite
+        const { Client, Account } = Appwrite;
+        
+        const client = new Client()
+            .setEndpoint('https://cloud.appwrite.io/v1')
+            .setProject('68a1fc1500311f33db92');
+        
+        const account = new Account(client);
+
+        // Variables globales
+        let currentUser = null;
+
+        // Éléments DOM
+        const loginForm = document.getElementById('loginForm');
+        const dashboard = document.getElementById('dashboard');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const loginBtn = document.getElementById('loginBtn');
+        const loginBtnText = document.getElementById('loginBtnText');
+        const loginSpinner = document.getElementById('loginSpinner');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const userEmail = document.getElementById('userEmail');
+
+        // Fonction pour afficher/masquer le spinner de chargement
+        function toggleLoading(isLoading) {
+            if (isLoading) {
+                loginBtnText.style.display = 'none';
+                loginSpinner.style.display = 'block';
+                loginBtn.disabled = true;
+            } else {
+                loginBtnText.style.display = 'block';
+                loginSpinner.style.display = 'none';
+                loginBtn.disabled = false;
+            }
+        }
+
+        // Fonction pour afficher les erreurs
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Fonction pour afficher le dashboard
+        function showDashboard(user) {
+            currentUser = user;
+            userEmail.textContent = user.email;
+            loginForm.style.display = 'none';
+            dashboard.style.display = 'block';
+        }
+
+        // Fonction pour afficher le formulaire de connexion
+        function showLoginForm() {
+            currentUser = null;
+            loginForm.style.display = 'block';
+            dashboard.style.display = 'none';
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+        }
+
+        // Gestion de la soumission du formulaire de connexion
+        adminLoginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            toggleLoading(true);
+            errorMessage.style.display = 'none';
+
+            try {
+                // Tentative de connexion avec AppWrite
+                const session = await account.createEmailPasswordSession(email, password);
+                
+                // Récupération des informations utilisateur
+                const user = await account.get();
+                
+                console.log('Connexion réussie:', user);
+                showDashboard(user);
+                
+            } catch (error) {
+                console.error('Erreur de connexion:', error);
+                
+                let errorMsg = 'Erreur de connexion. Veuillez vérifier vos identifiants.';
+                
+                if (error.code === 401) {
+                    errorMsg = 'Email ou mot de passe incorrect.';
+                } else if (error.code === 429) {
+                    errorMsg = 'Trop de tentatives. Veuillez réessayer plus tard.';
+                } else if (error.code === 400) {
+                    errorMsg = 'Données invalides. Veuillez vérifier vos informations.';
+                }
+                
+                showError(errorMsg);
+            } finally {
+                toggleLoading(false);
+            }
+        });
+
+        // Gestion de la déconnexion
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                await account.deleteSession('current');
+                console.log('Déconnexion réussie');
+                showLoginForm();
+            } catch (error) {
+                console.error('Erreur lors de la déconnexion:', error);
+                // On affiche quand même le formulaire de connexion
+                showLoginForm();
+            }
+        });
+
+        // Vérification de la session au chargement de la page
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const user = await account.get();
+                console.log('Session existante trouvée:', user);
+                showDashboard(user);
+            } catch (error) {
+                console.log('Aucune session active, affichage du formulaire de connexion');
+                showLoginForm();
+            }
+        });
+
+        // Animation du focus sur les champs de saisie
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--accent)';
+                this.style.boxShadow = '0 0 0 3px rgba(74, 144, 226, 0.1)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.borderColor = 'var(--card-border)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Animation des cartes admin au survol
+        const adminCards = document.querySelectorAll('.admin-card');
+        adminCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+
+    <!-- Animation CSS pour le spinner -->
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .admin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1) !important;
+        }
+
+        .error-message {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .admin-grid {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- Script du curseur (réutilisé depuis l'index) -->
+    <script src="script.js"></script>
+</body>
+</html>
