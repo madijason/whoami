@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Admin - Jason Madi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">JM</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#skills" class="nav-link">Compétences</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section id="login" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Accès réservé</span>
+                <h1 class="hero-title">Connexion Admin</h1>
+                <p class="hero-description">
+                    Connectez-vous pour accéder au panneau d'administration.<br>
+                    Utilisez vos identifiants AppWrite.
+                </p>
+                <form id="login-form" class="login-form">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Mot de passe" required>
+                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                </form>
+            </div>
+            <div class="hero-visual">
+                <div class="code-block">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="code-title">admin.js</span>
+                    </div>
+                    <div class="code-content">
+                        <div class="code-line">
+                            <span class="keyword">const</span> 
+                            <span class="variable">admin</span> 
+                            <span class="operator">=</span> 
+                            <span class="keyword">new</span> 
+                            <span class="class-name">Admin</span>
+                            <span class="bracket">(</span>
+                            <span class="string">"authenticated"</span>
+                            <span class="bracket">)</span>
+                            <span class="semicolon">;</span>
+                        </div>
+                        <div class="code-line indent">
+                            <span class="variable">admin</span>
+                            <span class="operator">.</span>
+                            <span class="variable">login</span>
+                            <span class="bracket">(</span>
+                            <span class="string">"success"</span>
+                            <span class="bracket">)</span>
+                            <span class="semicolon">;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@latest"></script>
+    <script>
+        const client = new Appwrite.Client();
+        client
+            .setEndpoint('https://cloud.appwrite.io/v1')
+            .setProject('68a1fc1500311f33db92');
+        const account = new Appwrite.Account(client);
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            try {
+                const session = await account.createSession(email, password);
+                alert('Connexion réussie!');
+                // Rediriger vers le panneau admin ou autre
+                // window.location.href = 'admin_panel.html';
+            } catch (error) {
+                alert('Erreur de connexion: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
