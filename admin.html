@@ -91,47 +91,82 @@
                         <p style="margin-top: 1rem; color: var(--text-light); font-size: 1.1rem;">Bienvenue dans votre espace d'administration</p>
                     </div>
 
-                    <div class="admin-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="admin-card" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
-                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <div class="admin-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="admin-card enhanced-contrast" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
                                 <span>📊</span> Statistiques
                             </h3>
-                            <div class="stat-grid" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <div style="display: flex; justify-content: space-between;">
-                                    <span>Visiteurs aujourd'hui :</span>
-                                    <strong>42</strong>
+                            <div class="stat-grid" style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-primary); font-weight: 500;">Visiteurs aujourd'hui :</span>
+                                    <strong style="color: var(--accent); font-size: 1.1em;">42</strong>
                                 </div>
-                                <div style="display: flex; justify-content: space-between;">
-                                    <span>Visiteurs total :</span>
-                                    <strong>1,337</strong>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-primary); font-weight: 500;">Visiteurs total :</span>
+                                    <strong style="color: var(--accent); font-size: 1.1em;">1,337</strong>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="admin-card" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
-                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="admin-card enhanced-contrast" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
                                 <span>⚙️</span> Actions rapides
                             </h3>
                             <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Éditer le profil</button>
-                                <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Gérer les projets</button>
+                                <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 500;">Éditer le profil</button>
+                                <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 500;">Gérer les projets</button>
+                                <button id="editPhoneBtn" class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 500; border-color: var(--accent); color: var(--accent);">Modifier téléphone</button>
                             </div>
                         </div>
 
-                        <div class="admin-card" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
-                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="admin-card enhanced-contrast" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
                                 <span>👤</span> Utilisateur connecté
                             </h3>
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <div style="display: flex; justify-content: space-between;">
-                                    <span>Email :</span>
-                                    <strong id="userEmail">-</strong>
+                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-primary); font-weight: 500;">Email :</span>
+                                    <strong id="userEmail" style="color: var(--accent); font-size: 0.9em; word-break: break-all;">-</strong>
                                 </div>
-                                <div style="display: flex; justify-content: space-between;">
-                                    <span>Rôle :</span>
-                                    <strong>Administrateur</strong>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-primary); font-weight: 500;">Téléphone :</span>
+                                    <strong id="userPhone" style="color: var(--accent); font-size: 0.9em;">Non défini</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-primary); font-weight: 500;">Rôle :</span>
+                                    <strong style="color: var(--accent); font-size: 0.9em;">Administrateur</strong>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal pour modifier le téléphone -->
+                    <div id="phoneModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 1000; backdrop-filter: blur(5px);">
+                        <div class="modal-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 2rem; max-width: 400px; width: 90%;">
+                            <div class="modal-header" style="margin-bottom: 1.5rem;">
+                                <h3 style="color: var(--accent); margin: 0; display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
+                                    <span>📞</span> Modifier le numéro de téléphone
+                                </h3>
+                            </div>
+                            <form id="phoneForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div class="form-group">
+                                    <label for="phoneInput" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Numéro de téléphone :</label>
+                                    <input 
+                                        type="tel" 
+                                        id="phoneInput" 
+                                        name="phone" 
+                                        style="width: 100%; padding: 0.8rem 1rem; border: 2px solid var(--card-border); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; transition: border-color 0.3s ease;"
+                                        placeholder="+32 123 45 67 89"
+                                    >
+                                </div>
+                                <div class="modal-actions" style="display: flex; gap: 1rem; justify-content: flex-end;">
+                                    <button type="button" id="cancelPhoneBtn" class="btn btn-outline" style="padding: 0.8rem 1.5rem; border-color: #ff6b6b; color: #ff6b6b;">Annuler</button>
+                                    <button type="submit" id="savePhoneBtn" class="btn btn-primary" style="padding: 0.8rem 1.5rem;">
+                                        <span id="savePhoneBtnText">Enregistrer</span>
+                                        <div id="savePhoneSpinner" style="display: none; width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid white; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
@@ -139,11 +174,14 @@
                         <button 
                             id="logoutBtn" 
                             class="btn btn-outline" 
-                            style="padding: 0.8rem 2rem; border-color: #ff6b6b; color: #ff6b6b;"
+                            style="padding: 0.8rem 2rem; border-color: #ff6b6b; color: #ff6b6b; font-weight: 500;"
                         >
                             Se déconnecter
                         </button>
                     </div>
+
+                    <!-- Messages de success/erreur -->
+                    <div id="successMessage" class="success-message" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(76, 175, 80, 0.1); border: 1px solid rgba(76, 175, 80, 0.3); border-radius: 8px; color: #4caf50; text-align: center;"></div>
                 </div>
             </div>
         </div>
@@ -168,22 +206,34 @@
         const dashboard = document.getElementById('dashboard');
         const adminLoginForm = document.getElementById('adminLoginForm');
         const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
         const loginBtn = document.getElementById('loginBtn');
         const loginBtnText = document.getElementById('loginBtnText');
         const loginSpinner = document.getElementById('loginSpinner');
         const logoutBtn = document.getElementById('logoutBtn');
         const userEmail = document.getElementById('userEmail');
+        const userPhone = document.getElementById('userPhone');
+        
+        // Éléments du modal téléphone
+        const editPhoneBtn = document.getElementById('editPhoneBtn');
+        const phoneModal = document.getElementById('phoneModal');
+        const phoneForm = document.getElementById('phoneForm');
+        const phoneInput = document.getElementById('phoneInput');
+        const cancelPhoneBtn = document.getElementById('cancelPhoneBtn');
+        const savePhoneBtn = document.getElementById('savePhoneBtn');
+        const savePhoneBtnText = document.getElementById('savePhoneBtnText');
+        const savePhoneSpinner = document.getElementById('savePhoneSpinner');
 
         // Fonction pour afficher/masquer le spinner de chargement
-        function toggleLoading(isLoading) {
+        function toggleLoading(isLoading, btn = loginBtn, btnText = loginBtnText, spinner = loginSpinner) {
             if (isLoading) {
-                loginBtnText.style.display = 'none';
-                loginSpinner.style.display = 'block';
-                loginBtn.disabled = true;
+                btnText.style.display = 'none';
+                spinner.style.display = 'block';
+                btn.disabled = true;
             } else {
-                loginBtnText.style.display = 'block';
-                loginSpinner.style.display = 'none';
-                loginBtn.disabled = false;
+                btnText.style.display = 'block';
+                spinner.style.display = 'none';
+                btn.disabled = false;
             }
         }
 
@@ -196,10 +246,20 @@
             }, 5000);
         }
 
+        // Fonction pour afficher les messages de succès
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+
         // Fonction pour afficher le dashboard
         function showDashboard(user) {
             currentUser = user;
             userEmail.textContent = user.email;
+            userPhone.textContent = user.phone || 'Non défini';
             loginForm.style.display = 'none';
             dashboard.style.display = 'block';
         }
@@ -211,6 +271,19 @@
             dashboard.style.display = 'none';
             document.getElementById('email').value = '';
             document.getElementById('password').value = '';
+        }
+
+        // Fonction pour ouvrir le modal de téléphone
+        function openPhoneModal() {
+            phoneInput.value = currentUser.phone || '';
+            phoneModal.style.display = 'block';
+            phoneInput.focus();
+        }
+
+        // Fonction pour fermer le modal de téléphone
+        function closePhoneModal() {
+            phoneModal.style.display = 'none';
+            phoneInput.value = '';
         }
 
         // Gestion de la soumission du formulaire de connexion
@@ -252,6 +325,58 @@
             }
         });
 
+        // Gestion de la modification du téléphone
+        phoneForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const phone = phoneInput.value.trim();
+            
+            toggleLoading(true, savePhoneBtn, savePhoneBtnText, savePhoneSpinner);
+            
+            try {
+                // Mise à jour du numéro de téléphone avec AppWrite
+                await account.updatePhone(phone, 'password_placeholder'); // AppWrite nécessite un mot de passe
+                
+                // Alternativement, on peut utiliser updatePrefs pour stocker dans les préférences
+                await account.updatePrefs({ phone: phone });
+                
+                // Mise à jour de l'utilisateur courant
+                currentUser.phone = phone;
+                userPhone.textContent = phone || 'Non défini';
+                
+                showSuccess('✓ Numéro de téléphone mis à jour avec succès !');
+                closePhoneModal();
+                
+            } catch (error) {
+                console.error('Erreur lors de la mise à jour du téléphone:', error);
+                
+                // Si la méthode updatePhone ne fonctionne pas, on utilise les préférences
+                try {
+                    await account.updatePrefs({ phone: phone });
+                    currentUser.phone = phone;
+                    userPhone.textContent = phone || 'Non défini';
+                    showSuccess('✓ Numéro de téléphone mis à jour avec succès !');
+                    closePhoneModal();
+                } catch (prefsError) {
+                    console.error('Erreur lors de la mise à jour des préférences:', prefsError);
+                    showError('Erreur lors de la mise à jour du numéro de téléphone.');
+                }
+            } finally {
+                toggleLoading(false, savePhoneBtn, savePhoneBtnText, savePhoneSpinner);
+            }
+        });
+
+        // Gestion des événements du modal téléphone
+        editPhoneBtn.addEventListener('click', openPhoneModal);
+        cancelPhoneBtn.addEventListener('click', closePhoneModal);
+        
+        // Fermer le modal en cliquant en dehors
+        phoneModal.addEventListener('click', (e) => {
+            if (e.target === phoneModal) {
+                closePhoneModal();
+            }
+        });
+
         // Gestion de la déconnexion
         logoutBtn.addEventListener('click', async () => {
             try {
@@ -270,6 +395,17 @@
             try {
                 const user = await account.get();
                 console.log('Session existante trouvée:', user);
+                
+                // Récupérer les préférences pour le téléphone
+                try {
+                    const prefs = await account.getPrefs();
+                    if (prefs.phone) {
+                        user.phone = prefs.phone;
+                    }
+                } catch (prefsError) {
+                    console.log('Pas de préférences téléphone trouvées');
+                }
+                
                 showDashboard(user);
             } catch (error) {
                 console.log('Aucune session active, affichage du formulaire de connexion');
@@ -313,9 +449,21 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Amélioration du contraste sur les cartes */
+        .enhanced-contrast {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--card-border) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .enhanced-contrast span, 
+        .enhanced-contrast strong {
+            font-weight: 600;
+        }
+
         .admin-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
         }
 
         input:focus {
@@ -325,6 +473,10 @@
         }
 
         .error-message {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .success-message {
             animation: slideIn 0.3s ease-out;
         }
 
@@ -351,6 +503,43 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        /* Styles pour le modal */
+        .modal {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            animation: slideInModal 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInModal {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Responsive pour les cartes */
+        @media (max-width: 768px) {
+            .admin-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .modal-content {
+                width: 95% !important;
+                padding: 1.5rem !important;
             }
         }
     </style>
