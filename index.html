@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Madi - Développeur</title>
+    <title>Jason Madi - Développeur & Étudiant en Informatique</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Navigation -->
+    <!-- Navigation minimaliste -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">JM</a>
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                JM
+                <span class="logo-bracket">/&gt;</span>
+            </a>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Accueil</a>
                 <a href="#about" class="nav-link">À propos</a>
@@ -22,185 +23,223 @@
                 <a href="#projects" class="nav-link">Projets</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
+            <div class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Design épuré -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
-                <span class="hero-subtitle">Salut, je suis</span>
-                <h1 class="hero-title">Jason Madi</h1>
-                <h2 class="hero-role">Étudiant en Informatique</h2>
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Disponible pour des projets
+                </div>
+                <h1 class="hero-title">
+                    Bonjour, je suis
+                    <span class="gradient-text">Jason Madi</span>
+                </h1>
+                <h2 class="hero-subtitle">Étudiant en Informatique à HelHa</h2>
                 <p class="hero-description">
-                    Passionné de tech depuis plus de 10 ans.<br>
-                    J'aime créer des choses et aider les autres grâce à la technologie.<br>
-                    <strong>BAC 1 Informatique - HelHa</strong>
+                    Passionné de technologie depuis plus de 10 ans, je crée des solutions 
+                    innovantes pour simplifier la vie des utilisateurs. Spécialisé en C# 
+                    et en développement de systèmes Windows.
                 </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">10+</span>
+                        <span class="stat-label">Ans de passion</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Projets actifs</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">BAC 1</span>
+                        <span class="stat-label">Informatique</span>
+                    </div>
+                </div>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                    <a href="https://github.com/madijason" class="btn btn-outline" target="_blank">GitHub</a>
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Découvrir mes projets</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/madijason" class="btn btn-secondary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="code-block">
-                    <div class="code-header">
-                        <div class="dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
                         </div>
-                        <span class="code-title">aboutMe.cs</span>
+                        <div class="window-title">~/projects/portfolio.cs</div>
+                        <div class="window-actions"></div>
                     </div>
                     <div class="code-content">
-                        <div class="code-line">
-                            <span class="keyword">public class</span> 
-                            <span class="class-name">Developer</span>
-                            <span class="bracket">{</span>
-                        </div>
-                        <div class="code-line indent">
-                            <span class="keyword">string</span> 
-                            <span class="variable">name</span> 
-                            <span class="operator">=</span> 
-                            <span class="string">"Jason Madi"</span><span class="semicolon">;</span>
-                        </div>
-                        <div class="code-line indent">
-                            <span class="keyword">string</span> 
-                            <span class="variable">school</span> 
-                            <span class="operator">=</span> 
-                            <span class="string">"HelHa"</span><span class="semicolon">;</span>
-                        </div>
-                        <div class="code-line indent">
-                            <span class="keyword">string</span> 
-                            <span class="variable">currentProject</span> 
-                            <span class="operator">=</span> 
-                            <span class="string">"adump"</span><span class="semicolon">;</span>
-                        </div>
-                        <div class="code-line indent">
-                            <span class="keyword">int</span> 
-                            <span class="variable">experience</span> 
-                            <span class="operator">=</span> 
-                            <span class="number">10</span><span class="semicolon">;</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="bracket">}</span>
-                        </div>
+                        <pre><code><span class="line-number">1</span>  <span class="keyword">namespace</span> <span class="namespace">Portfolio</span> {
+<span class="line-number">2</span>    <span class="keyword">public class</span> <span class="class-name">Developer</span> {
+<span class="line-number">3</span>      <span class="keyword">private readonly string</span> <span class="variable">_name</span> = <span class="string">"Jason Madi"</span>;
+<span class="line-number">4</span>      <span class="keyword">private readonly string</span> <span class="variable">_school</span> = <span class="string">"HelHa"</span>;
+<span class="line-number">5</span>      <span class="keyword">private readonly string</span> <span class="variable">_location</span> = <span class="string">"Belgium"</span>;
+<span class="line-number">6</span>      
+<span class="line-number">7</span>      <span class="keyword">public</span> <span class="class-name">List</span>&lt;<span class="class-name">string</span>&gt; <span class="variable">Skills</span> => <span class="keyword">new</span>() {
+<span class="line-number">8</span>        <span class="string">"C#"</span>, <span class="string">"VB.NET"</span>, <span class="string">"Python"</span>,
+<span class="line-number">9</span>        <span class="string">"Active Directory"</span>, <span class="string">"Docker"</span>
+<span class="line-number">10</span>      };
+<span class="line-number">11</span>      
+<span class="line-number">12</span>      <span class="keyword">public void</span> <span class="function">BuildAmazingThings</span>() {
+<span class="line-number">13</span>        <span class="comment">// Coding magic happens here ✨</span>
+<span class="line-number">14</span>      }
+<span class="line-number">15</span>    }
+<span class="line-number">16</span>  }</code></pre>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - Design en cartes -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">À propos</h2>
-                <div class="section-line"></div>
+                <span class="section-tag">// Qui suis-je ?</span>
+                <h2 class="section-title">À propos de moi</h2>
+                <p class="section-description">
+                    Étudiant passionné avec une décennie d'expérience autodidacte
+                </p>
             </div>
             <div class="about-grid">
-                <div class="about-text">
-                    <h3>👨‍🎓 Mes études</h3>
+                <div class="about-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Formation</h3>
                     <p>
-                        Actuellement en <strong>BAC 1 Informatique</strong> à <strong>HelHa</strong>. 
-                        Cette formation me permet d'approfondir mes connaissances théoriques et pratiques 
-                        en développement logiciel.
-                    </p>
-                    
-                    <h3>💡 Ma philosophie</h3>
-                    <p>
-                        Ce qui me motive le plus, c'est la possibilité d'aider tout le monde 
-                        grâce aux solutions technologiques que nous créons. J'aime partir de zéro 
-                        pour bien comprendre chaque aspect des projets.
-                    </p>
-                    
-                    <h3>🚀 Mon expertise</h3>
-                    <p>
-                        Spécialisé dans le développement C# et la gestion de systèmes, 
-                        j'ai notamment développé <strong>adump</strong>, un logiciel de gestion 
-                        pour l'Active Directory.
+                        Actuellement en <strong>BAC 1 Informatique à HelHa</strong>, 
+                        je combine formation académique et projets personnels pour 
+                        développer mes compétences en développement logiciel.
                     </p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Années de passion</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Langages maîtrisés</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">2023</span>
-                        <span class="stat-label">Début adump</span>
-                    </div>
+                <div class="about-card">
+                    <div class="card-icon">💡</div>
+                    <h3>Philosophie</h3>
+                    <p>
+                        Je crois en la technologie comme outil d'aide et de simplification. 
+                        J'aime partir de zéro pour comprendre chaque aspect d'un projet 
+                        et créer des solutions accessibles à tous.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Expertise</h3>
+                    <p>
+                        Spécialisé en <strong>C#</strong> et en gestion de systèmes Windows, 
+                        notamment l'Active Directory. Créateur d'<strong>adump</strong>, 
+                        un outil professionnel de gestion AD.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - Design moderne -->
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Compétences</h2>
-                <div class="section-line"></div>
+                <span class="section-tag">// Mon arsenal</span>
+                <h2 class="section-title">Compétences & Technologies</h2>
+                <p class="section-description">
+                    Les outils et langages que je maîtrise au quotidien
+                </p>
             </div>
-            <div class="skills-grid">
+            <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item expert">
-                            <span class="skill-name">HTML & CSS</span>
-                            <span class="skill-level">Expert</span>
+                    <div class="category-header">
+                        <h3>Languages</h3>
+                        <span class="category-count">5</span>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-badge expert">
+                            <span class="skill-icon">C#</span>
+                            <span class="skill-level-indicator"></span>
                         </div>
-                        <div class="skill-item intermediate">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-level">Intermédiaire</span>
+                        <div class="skill-badge advanced">
+                            <span class="skill-icon">VB.NET</span>
+                            <span class="skill-level-indicator"></span>
+                        </div>
+                        <div class="skill-badge expert">
+                            <span class="skill-icon">HTML/CSS</span>
+                            <span class="skill-level-indicator"></span>
+                        </div>
+                        <div class="skill-badge intermediate">
+                            <span class="skill-icon">JavaScript</span>
+                            <span class="skill-level-indicator"></span>
+                        </div>
+                        <div class="skill-badge intermediate">
+                            <span class="skill-icon">Python</span>
+                            <span class="skill-level-indicator"></span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item expert">
-                            <span class="skill-name">C#</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-item advanced">
-                            <span class="skill-name">VB.NET</span>
-                            <span class="skill-level">Avancé</span>
-                        </div>
-                        <div class="skill-item intermediate">
-                            <span class="skill-name">Python</span>
-                            <span class="skill-level">Intermédiaire</span>
-                        </div>
+                    <div class="category-header">
+                        <h3>Outils & Systèmes</h3>
+                        <span class="category-count">4</span>
                     </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Outils & Systèmes</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item" data-tool="git">
-                            <div class="tool-icon">🌿</div>
-                            <span class="tool-name">Git</span>
-                            <div class="tool-desc">Contrôle de version</div>
+                    <div class="tools-modern">
+                        <div class="tool-card">
+                            <div class="tool-icon-bg">
+                                <span class="tool-emoji">🌿</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Git</h4>
+                                <p>Contrôle de version</p>
+                            </div>
                         </div>
-                        <div class="tool-item" data-tool="docker">
-                            <div class="tool-icon">🐳</div>
-                            <span class="tool-name">Docker</span>
-                            <div class="tool-desc">Conteneurisation</div>
+                        <div class="tool-card">
+                            <div class="tool-icon-bg">
+                                <span class="tool-emoji">🐳</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Docker</h4>
+                                <p>Conteneurisation</p>
+                            </div>
                         </div>
-                        <div class="tool-item" data-tool="vs">
-                            <div class="tool-icon">💻</div>
-                            <span class="tool-name">Visual Studio</span>
-                            <div class="tool-desc">IDE de développement</div>
+                        <div class="tool-card">
+                            <div class="tool-icon-bg">
+                                <span class="tool-emoji">💻</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Visual Studio</h4>
+                                <p>IDE de développement</p>
+                            </div>
                         </div>
-                        <div class="tool-item" data-tool="ad">
-                            <div class="tool-icon">🏢</div>
-                            <span class="tool-name">Active Directory</span>
-                            <div class="tool-desc">Gestion des identités</div>
+                        <div class="tool-card">
+                            <div class="tool-icon-bg">
+                                <span class="tool-emoji">🏢</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Active Directory</h4>
+                                <p>Gestion des identités</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,96 +247,137 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section - Mise à jour avec vos vrais projets -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
+                <span class="section-tag">// Mes créations</span>
                 <h2 class="section-title">Projets</h2>
-                <div class="section-line"></div>
+                <p class="section-description">
+                    Une sélection de mes travaux récents et projets en cours
+                </p>
             </div>
             <div class="projects-grid">
+                <!-- Projet 1: adump (Featured) -->
                 <div class="project-card featured">
-                    <div class="project-header">
-                        <h3>🗂️ adump</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/madijason/adump" class="project-link" target="_blank" title="Voir sur GitHub">
+                    <div class="project-banner">
+                        <div class="project-status">⭐ Projet Principal</div>
+                        <div class="project-icon">🗂️</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>adump</h3>
+                            <a href="https://github.com/madijason/adump" class="project-github" target="_blank" title="Voir sur GitHub">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.75..."/>
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                             </a>
+                        <p class="project-description">
+                            Logiciel professionnel de gestion pour l'Active Directory développé en C#. 
+                            Permet aux administrateurs réseau de gérer efficacement les utilisateurs, 
+                            groupes et ressources avec une interface intuitive.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">✓ Gestion complète des utilisateurs AD</div>
+                            <div class="feature-item">✓ Gestion des groupes de sécurité</div>
+                            <div class="feature-item">✓ Attribution de permissions</div>
+                            <div class="feature-item">✓ Génération de rapports détaillés</div>
                         </div>
-                    </div>
-                    <p class="project-description">
-                        <strong>Logiciel de gestion pour l'Active Directory</strong> développé en C#. 
-                        Permet aux administrateurs réseau de gérer efficacement les utilisateurs, 
-                        les groupes et les ressources. Fonctionnalités : création/modification/suppression 
-                        d'utilisateurs et groupes, gestion des permissions, génération de rapports.
-                    </p>
-                    <div class="project-features">
-                        <ul>
-                            <li>✅ Gestion complète des utilisateurs AD</li>
-                            <li>✅ Gestion des groupes de sécurité</li>
-                            <li>✅ Attribution de permissions</li>
-                            <li>✅ Génération de rapports</li>
-                        </ul>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag primary">C#</span>
-                        <span class="tech-tag">Active Directory</span>
-                        <span class="tech-tag">Visual Studio</span>
-                    </div>
-                    <div class="project-stats">
-                        <span class="stat-item">📅 Septembre 2023</span>
-                        <span class="stat-item">🔄 Dernière MAJ: Janvier 2025</span>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech-badge primary">C#</span>
+                                <span class="tech-badge">Active Directory</span>
+                                <span class="tech-badge">Windows</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="meta-item">📅 Sept 2023</span>
+                                <span class="meta-item">🔄 Jan 2025</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Projet 2: silverdesk -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>🖥️ WeaveOS</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/madijason/WeaveOS" class="project-link" target="_blank" title="Voir sur GitHub">
+                    <div class="project-banner">
+                        <div class="project-status">🚀 Récent</div>
+                        <div class="project-icon">💻</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>SilverDesk</h3>
+                            <a href="https://github.com/madijason/silverdesk" class="project-github" target="_blank" title="Voir sur GitHub">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.75..."/>
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                             </a>
                         </div>
-                    </div>
-                    <p class="project-description">
-                        Projet en développement - Détails à venir.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag primary">C#</span>
-                    </div>
-                    <div class="project-stats">
-                        <span class="stat-item">📅 Mai 2025</span>
-                        <span class="stat-item">🔄 Dernière MAJ: Mai 2025</span>
+                        <p class="project-description">
+                            Environnement Windows alternatif conçu pour rendre l'informatique 
+                            accessible aux personnes âgées. Interface simplifiée et intuitive 
+                            qui remplace le bureau Windows classique.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">✓ Interface simplifiée et épurée</div>
+                            <div class="feature-item">✓ Navigation intuitive</div>
+                            <div class="feature-item">✓ Accessibilité optimisée</div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech-badge primary">C#</span>
+                                <span class="tech-badge">Windows</span>
+                                <span class="tech-badge">UI/UX</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="meta-item">📅 Oct 2025</span>
+                                <span class="meta-item">🔄 Oct 2025</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Projet 3: WeaveOS -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>💻 silverdesk</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/madijason/silverdesk" class="project-link" target="_blank" title="Voir sur GitHub">
+                    <div class="project-banner">
+                        <div class="project-status">🔧 En développement</div>
+                        <div class="project-icon">🖥️</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>WeaveOS</h3>
+                            <a href="https://github.com/madijason/WeaveOS" class="project-github" target="_blank" title="Voir sur GitHub">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.75..."/>
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                             </a>
                         </div>
-                    </div>
-                    <p class="project-description">
-                        <strong>SilverDesk</strong> - Environnement Windows alternatif conçu pour rendre l'informatique accessible aux personnes âgées. Interface simplifiée et intuitive remplaçant le bureau Windows traditionnel.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag primary">C#</span>
-                        <span class="tech-tag">Windows</span>
-                    </div>
-                    <div class="project-stats">
-                        <span class="stat-item">📅 Octobre 2025</span>
-                        <span class="stat-item">🔄 Dernière MAJ: Octobre 2025</span>
+                        <p class="project-description">
+                            Projet système ambitieux en cours de développement. Plus de détails 
+                            à venir prochainement. Développé en C# pour l'écosystème Windows.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">🔨 En cours de développement</div>
+                            <div class="feature-item">📊 Documentation à venir</div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech-badge primary">C#</span>
+                                <span class="tech-badge">System</span>
+                            </div>
+                            <div class="project-meta">
+                                <span class="meta-item">📅 Mai 2025</span>
+                                <span class="meta-item">🔄 Mai 2025</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="projects-cta">
+                <p>Plus de projets sur mon profil GitHub</p>
+                <a href="https://github.com/madijason?tab=repositories" class="btn btn-outline" target="_blank">
+                    Voir tous mes projets →
+                </a>
             </div>
         </div>
     </section>
@@ -306,21 +386,49 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-content">
+                <span class="section-tag">// Restons en contact</span>
                 <h2>Travaillons ensemble</h2>
-                <p>Vous avez un projet en tête ? Contactez-moi !</p>
-                <div class="contact-links">
-                    <a href="mailto:votre.email@example.com" class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <span>Email</span>
+                <p>Vous avez un projet en tête ou simplement envie d'échanger ? N'hésitez pas à me contacter !</p>
+                <div class="contact-grid">
+                    <a href="mailto:contact@example.com" class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <span class="contact-emoji">✉️</span>
+                        </div>
+                        <h4>Email</h4>
+                        <p>contact@example.com</p>
                     </a>
-                    <a href="https://github.com/madijason" class="contact-item" target="_blank">
-                        <div class="contact-icon">🐙</div>
-                        <span>GitHub</span>
+                    <a href="https://github.com/madijason" class="contact-card" target="_blank">
+                        <div class="contact-icon-wrapper">
+                            <span class="contact-emoji">🐙</span>
+                        </div>
+                        <h4>GitHub</h4>
+                        <p>@madijason</p>
                     </a>
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <span class="contact-emoji">📍</span>
+                        </div>
+                        <h4>Location</h4>
+                        <p>Belgium</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Jason Madi. Fait avec ❤️ et beaucoup de ☕</p>
+                <div class="footer-links">
+                    <a href="https://github.com/madijason" target="_blank">GitHub</a>
+                    <span>•</span>
+                    <a href="#home">Retour en haut ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
